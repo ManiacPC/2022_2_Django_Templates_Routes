@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block contenido %}
+    <h1>Lista de actores</h1>
+    <hr />
+    <table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>País</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Christoph Waltz</td>
+            <td>Austria</td>
+            <td>
+                <img src="{% static 'img/cris.png' %}"
+                     class="img-thumbnail"
+                     alt="My image">
+            </td>
+        </tr>
+    </tbody>
+    </table>
+{% endblock %}

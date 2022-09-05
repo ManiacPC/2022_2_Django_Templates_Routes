@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block contenido %}
+    <h1>{{ autor }}</h1>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+
+    {% for director in directores %}
+            <tr> <!-- table row -->
+                <td>
+                    {{ director.nombre }}
+                    {% if director.retirado %}
+                        <span class="badge bg-danger">retirado</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <img src="{% static director.imagen %}"
+                         alt="imagen"
+                         class="img-thumbnail">
+                </td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
